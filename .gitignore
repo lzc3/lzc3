@@ -36,5 +36,5 @@ build/
 mvnw
 mvnw.cmd
 maven-wrapper.properties
-src/test
+#src/test
 .mvn
