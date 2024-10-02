@@ -1,0 +1,15 @@
+# yml
+# 大小写敏感
+# 值前面必须有空格作为分隔符
+# 缩进的空格数目不重要，只要相同层级的元素左侧对其即可
+
+custom:
+  properties:
+    value: lzc1
+    valueList:
+      - lzc1
+      - lzc2
+      - lzc3
+    valueSet:
+      - 1lzc
+      - 2lzc
