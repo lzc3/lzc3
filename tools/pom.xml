@@ -3,13 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<!--    <parent>-->
-<!--        <groupId>com.lzc</groupId>-->
-<!--        <artifactId>spring-boot-init</artifactId>-->
-<!--        <version>0.0.1-SNAPSHOT</version>-->
-<!--    </parent>-->
+    <parent>
+        <groupId>com.lzc</groupId>
+        <artifactId>spring-boot-init</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
-    <groupId>org.lzc</groupId>
+<!--    会自动继承父工程的groupId，也可以自定义-->
+<!--    <groupId>com.lzc</groupId>-->
     <artifactId>tools</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -20,11 +21,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
-            <scope>provided</scope>
-        </dependency>
+
     </dependencies>
 </project>
