@@ -1,7 +1,7 @@
 package com.lzc.springbootinit;
 
 
-import com.lzc.springbootinit.config.TestProperties;
+import com.lzc.springbootinit.config.properties.TestProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

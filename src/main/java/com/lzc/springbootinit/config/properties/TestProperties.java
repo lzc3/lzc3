@@ -1,4 +1,4 @@
-package com.lzc.springbootinit.config;
+package com.lzc.springbootinit.config.properties;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
