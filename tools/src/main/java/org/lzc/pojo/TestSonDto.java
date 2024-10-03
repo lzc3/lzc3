@@ -1,4 +1,4 @@
-package com.lzc.springbootinit.pojo;
+package org.lzc.pojo;
 
 import lombok.Data;
 

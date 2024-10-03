@@ -1,7 +1,7 @@
 package com.lzc.springbootinit.controller;
 
-import com.lzc.springbootinit.pojo.TestDto;
 
+import org.lzc.pojo.TestDto;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 

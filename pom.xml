@@ -13,6 +13,7 @@
     <groupId>com.lzc</groupId>
     <artifactId>spring-boot-init</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>spring-boot-init</name>
     <description>spring-boot-init</description>
 
@@ -23,6 +24,9 @@
     <developers>
         <developer/>
     </developers>
+    <modules>
+        <module>tools</module>
+    </modules>
     <scm>
         <connection/>
         <developerConnection/>
