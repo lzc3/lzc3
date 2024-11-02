@@ -29,6 +29,7 @@
     <modules>
         <module>tools</module>
         <module>web</module>
+        <module>mq</module>
     </modules>
 
     <scm>

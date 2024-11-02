@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    host: 192.168.30.130 # 你的虚拟机IP
+    port: 5672 # 端口
+    virtual-host: /lzc # 虚拟主机
+    username: lzc # 用户名
+    password: welcome1 # 密码
