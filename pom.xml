@@ -18,42 +18,43 @@
     <name>spring-boot-init</name>
     <description>spring-boot-init</description>
 
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-
     <modules>
         <module>tools</module>
         <module>web</module>
         <module>mq</module>
     </modules>
 
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
-
-
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <java.version>8</java.version>
-<!--        <junit.version>1.6.3</junit.version>-->
+<!--        <junit.version>1.6.2</junit.version>-->
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.34</version>
             <scope>provided</scope>
         </dependency>
+        <!--单元测试-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--单元测试依赖-->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <!--统一管理依赖版本，实际不会加入对应依赖，只是一个版本指示，子工程就可以不用指定版本，实际导入还是引入-->
