@@ -23,6 +23,7 @@
         <module>web</module>
         <module>mq</module>
         <module>thread</module>
+        <module>designPattern</module>
     </modules>
 
     <properties>
