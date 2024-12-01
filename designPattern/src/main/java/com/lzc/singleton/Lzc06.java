@@ -2,7 +2,9 @@ package com.lzc.singleton;
 
 public class Lzc06 {
 
-    public static Lzc06 INSTANCE;
+    // JIT
+    // 语句重排 volatile
+    public static volatile Lzc06 INSTANCE;
 
     private Lzc06() {}
 

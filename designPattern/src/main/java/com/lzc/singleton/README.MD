@@ -22,6 +22,7 @@ private static final Lzc01 INSTANCE = new Lzc01();
 
 ### 枚举实现
 不仅可以解决多线程访问问题，还可以方式反序列化
+// todo 为什么单例无法被反序列化
 
 ### 特性
 * 构造方法私有
