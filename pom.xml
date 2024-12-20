@@ -24,6 +24,7 @@
         <module>mq</module>
         <module>thread</module>
         <module>designPattern</module>
+        <module>spring</module>
     </modules>
 
     <properties>
