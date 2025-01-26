@@ -46,5 +46,14 @@ public class Cycler <T>{
         }
     }
 
+    public static void cycle(int[] intArr) {
+        cycle(intArr, CyclePrintRunner.getInstance());
+    }
+
+    public static void cycle(int[] intArr, CycleRunner<Object> cycleRunner) {
+        for (Object object : intArr) {
+            cycleRunner.apply(object);
+        }
+    }
 
 }

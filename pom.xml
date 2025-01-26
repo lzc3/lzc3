@@ -58,6 +58,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.38</version>
+        </dependency>
+
     </dependencies>
 
     <!--统一管理依赖版本，实际不会加入对应依赖，只是一个版本指示，子工程就可以不用指定版本，实际导入还是引入-->

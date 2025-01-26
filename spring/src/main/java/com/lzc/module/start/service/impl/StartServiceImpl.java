@@ -11,9 +11,18 @@ public class StartServiceImpl implements StartService {
         this.startDao = startDao;
     }
 
+
+    public void init() {
+        System.out.println("init startServiceImpl ");
+    }
+
+    public void destroy() {
+        System.out.println("destroy startServiceImpl ");
+    }
+
     @Override
     public void start() {
-        System.out.println("StartServiceImpl start");
+        System.out.println("StartServiceImpl start >>>");
 
         if (startDao != null) {
             startDao.start();

@@ -3,10 +3,25 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id = "startDao" class="com.lzc.module.start.dao.impl.StartDaoImpl"/>
-
-    <bean id = "startService" name="alias1 alias2 alias3" scope="prototype" class="com.lzc.module.start.service.impl.StartServiceImpl">
-        <property name="startDao" ref="startDao"/>
+    <bean id = "startDao" class="com.lzc.module.start.dao.impl.StartDaoImpl">
+        <property name="startNum" value="1"/>
+        <constructor-arg name="startNameInput" value="lzc"/>
     </bean>
+
+    <bean id = "startService"
+          name="alias1 alias2 alias3"
+          scope="prototype"
+          class="com.lzc.module.start.service.impl.StartServiceImpl"
+          init-method="init"
+          destroy-method="destroy" autowire="byType">
+<!--        <property name="startDao" ref="startDao"/>-->
+    </bean>
+
+    <bean id = "factoryStartService" class="com.lzc.module.start.factory.StartServiceFactory" factory-method="getStartService"/>
+
+    <bean id = "factory" class="com.lzc.module.start.factory.StartServiceFactory"/>
+    <bean id = "factoryStartServiceNoStatic" factory-bean="factory" factory-method="getStartServiceNoStatic"/>
+
+    <bean id = "factoryStartServiceBean" class="com.lzc.module.start.factory.StartServiceFactoryBean"/>
 
 </beans>
