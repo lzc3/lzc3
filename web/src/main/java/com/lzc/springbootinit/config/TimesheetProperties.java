@@ -27,4 +27,5 @@ public class TimesheetProperties {
     Integer month;
 
     List<String> blackMonthDay;
+    List<Integer> addWorkDay;
 }

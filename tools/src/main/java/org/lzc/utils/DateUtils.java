@@ -6,6 +6,7 @@ import java.time.YearMonth;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -34,7 +35,7 @@ public class DateUtils {
      * @param month 月份
      * @return map
      */
-    public static Map<String, Integer> getWorkdaysOfDecember(Integer year, Integer month) {
+    public static Map<String, Integer> getWorkdaysOfDecember(Integer year, Integer month, List<Integer> addWorkDay) {
 
         YearMonth yearMonth = YearMonth.of(year, month);
         int dayOfMonth = yearMonth.lengthOfMonth();
@@ -46,7 +47,7 @@ public class DateUtils {
 
         while (currentDate.isBefore(endDate.plusDays(1))) {
             DayOfWeek dayOfWeek = currentDate.getDayOfWeek();
-            if (DayOfWeekConstant.isWorkDay(dayOfWeek)) {
+            if (DayOfWeekConstant.isWorkDay(dayOfWeek) || (addWorkDay != null && addWorkDay.contains(currentDate.getDayOfMonth()))) {
                 String dateKey = buildString(currentDate.getYear(), currentDate.getMonthValue(), currentDate.getDayOfMonth());
                 int dayValue = DayOfWeekConstant.transDayOfWeekToNum(dayOfWeek);
                 workdays.put(dateKey, dayValue);

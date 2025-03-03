@@ -21,7 +21,8 @@ public class TimesheetService {
     private final TimesheetProperties timesheetProperties;
 
     private Map<String, Integer> generateWorkDaysMap() {
-        Map<String, Integer> workdaysMap = DateUtils.getWorkdaysOfDecember(timesheetProperties.getYear(), timesheetProperties.getMonth());
+        List<Integer> addWorkDay = timesheetProperties.getAddWorkDay();
+        Map<String, Integer> workdaysMap = DateUtils.getWorkdaysOfDecember(timesheetProperties.getYear(), timesheetProperties.getMonth(), addWorkDay);
         List<String> blackMonthDay = timesheetProperties.getBlackMonthDay();
         Optional.ofNullable(blackMonthDay)
                 .orElseGet(ArrayList::new)
@@ -68,12 +69,10 @@ public class TimesheetService {
         for (Map.Entry<String, Integer> entry : workdaysMap.entrySet()) {
             businessDataJsonObject.put(monthDayUuid, entry.getKey());
             businessDataJsonObject.put(weekDayUuid, entry.getValue());
-//            jsonObject.put("data", businessDataJsonObject);
-
-            System.out.println("stop");
+            jsonObject.put("data", businessDataJsonObject);
             // send request
-//            String postResult = postFunction.post(url, jsonObject, headers);
-//            log.info(postResult);
+            String postResult = postFunction.post(url, jsonObject, headers);
+            log.info(postResult);
         }
     }
 
