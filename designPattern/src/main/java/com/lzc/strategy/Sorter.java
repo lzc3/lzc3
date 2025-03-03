@@ -9,7 +9,7 @@ public class Sorter {
     public static void main(String[] args) {
         Cat[] cats = {new Cat(3), new Cat(2), new Cat(4), new Cat(1)};
         Sorter.sort(cats);
-        Cycler.cycleByObjects(cats, CyclePrintRunner.getInstance());
+        Cycler.cycle(cats, CyclePrintRunner.getInstance());
     }
 
 

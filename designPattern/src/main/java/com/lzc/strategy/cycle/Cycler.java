@@ -22,7 +22,7 @@ public class Cycler{
             System.out.println(c1.getAge());
         });
 
-        Cycler.cycleByObjects(cats, CyclePrintRunner.getInstance());
+        Cycler.cycle(cats, CyclePrintRunner.getInstance());
 
         Cycler.cycleByColumn(null, 10, item -> {
             System.out.printf( "%-8.1f", item);
@@ -50,6 +50,7 @@ public class Cycler{
 
     /**
      * 循环遍历数组中的每个元素，然后执行对应cycleRunner中的方法
+     *
      * @param objects 循环数组
      * @param column 列数
      * @param cycleRunner 执行内容
@@ -63,11 +64,6 @@ public class Cycler{
         }
     }
 
-    public static void cycleByObjects(Object[] objects, CycleRunner<Object> cycleRunner) {
-        for (Object object : objects) {
-            cycleRunner.apply(object);
-        }
-    }
 
     public static void cycle(int[] intArr) {
         cycle(intArr, CyclePrintRunner.getInstance());

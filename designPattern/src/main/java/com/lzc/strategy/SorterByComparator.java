@@ -24,7 +24,7 @@ public class SorterByComparator {
         });
 
         // 传入类
-        Cycler.cycleByObjects(cats, CyclePrintRunner.getInstance());
+        Cycler.cycle(cats, CyclePrintRunner.getInstance());
     }
 
     public static void sort(Object[] objects, Comparator comparator) {
