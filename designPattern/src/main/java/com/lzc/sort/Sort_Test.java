@@ -3,7 +3,10 @@ package com.lzc.sort;
 import com.lzc.strategy.cycle.Cycler;
 import com.lzc.strategy.cycle.runner.CyclePrintByFormatRunner;
 import com.lzc.strategy.cycle.runner.CyclePrintRunner;
+import org.lzc.utils.ArrayUtils;
 import org.lzc.utils.BoxUtils;
+
+import java.util.Arrays;
 
 public class Sort_Test {
 
@@ -11,8 +14,9 @@ public class Sort_Test {
         int[] arr = new int[]{5,4,3,2,1};
 //        bubbleSort(arr);
 //        selectionSort(arr);
-        insertionSort(arr);
-        Cycler.cycleByColumnWithHeader(BoxUtils.boxedIntArr(arr), 5, new CyclePrintByFormatRunner("%-9s"));
+//        insertionSort(arr);
+        int[] ints = mergeSort(arr);
+        Cycler.cycleByColumnWithHeader(BoxUtils.boxedIntArr(ints), 5, new CyclePrintByFormatRunner("%-9s"));
         System.out.println();
     }
 
@@ -66,6 +70,55 @@ public class Sort_Test {
                 }
             }
         }
+    }
+
+
+    /**
+     * 归并排序
+     *
+     */
+    public static int[] mergeSort(int[] arr) {
+        int length = arr.length;
+        if (length == 1) {
+            return arr;
+        } else {
+            int[] leftArr = new int[length/2];
+            int[] rightArr = new int[length - length/2];
+            System.arraycopy(arr, 0, leftArr, 0, length/2);
+            System.arraycopy(arr, length/2, rightArr, 0, length - length/2);
+            return sortArr(mergeSort(leftArr), mergeSort(rightArr));
+        }
+    }
+
+
+    public static int[] sortArr(int[] arrLeft, int[] arrRight) {
+
+        if (arrLeft == null && arrRight != null) {
+            return arrRight;
+        }
+        if (arrLeft != null && arrRight == null) {
+            return arrLeft;
+        }
+
+        int leftLength = arrLeft.length;
+        int rightLength = arrRight.length;
+
+        int[] resultArr = new int[leftLength + rightLength];
+        int curL = 0, curR = 0;
+        while (curL < leftLength && curR < rightLength) {
+            if (arrLeft[curL] < arrRight[curR]) {
+                resultArr[curL + curR] = arrLeft[curL];
+                curL++;
+            } else {
+                resultArr[curL + curR] = arrRight[curR];
+                curR++;
+            }
+        }
+
+        if (leftLength - curL >= 0) System.arraycopy(arrLeft, curL, resultArr, curL + curR, leftLength - curL);
+        if (rightLength - curR >= 0) System.arraycopy(arrRight, curR, resultArr, curL + curR, rightLength - curR);
+
+        return resultArr;
     }
 
 
