@@ -26,6 +26,7 @@
         <module>designPattern</module>
         <module>spring</module>
         <module>ocr</module>
+        <module>cus-spring</module>
     </modules>
 
     <properties>
