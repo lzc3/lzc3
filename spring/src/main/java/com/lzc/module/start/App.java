@@ -1,4 +1,4 @@
-package com.lzc;
+package com.lzc.module.start;
 
 import com.lzc.module.start.service.StartService;
 import org.springframework.context.ApplicationContext;
