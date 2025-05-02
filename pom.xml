@@ -25,7 +25,7 @@
         <module>thread</module>
         <module>designPattern</module>
         <module>spring</module>
-        <module>ocr</module>
+        <module>image</module>
         <module>cus-spring</module>
     </modules>
 

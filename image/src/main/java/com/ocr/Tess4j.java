@@ -6,6 +6,9 @@ import net.sourceforge.tess4j.TesseractException;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * 官网样例
+ */
 public class Tess4j {
     public static void main(String[] args) throws TesseractException, IOException {
         // todo test file

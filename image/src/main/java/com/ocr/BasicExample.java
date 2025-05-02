@@ -9,7 +9,11 @@ import java.io.IOException;
 import static org.bytedeco.leptonica.global.leptonica.pixDestroy;
 import static org.bytedeco.leptonica.global.leptonica.pixRead;
 
+/**
+ * OCR简单测试
+ */
 public class BasicExample {
+
     public static void main(String[] args) throws IOException {
         BytePointer outText;
 
