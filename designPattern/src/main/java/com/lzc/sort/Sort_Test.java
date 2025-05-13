@@ -6,18 +6,57 @@ import com.lzc.strategy.cycle.runner.CyclePrintRunner;
 import org.lzc.utils.ArrayUtils;
 import org.lzc.utils.BoxUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 public class Sort_Test {
+    public static void bucketSort(int[] arr) {
+        int bucketNum = 3;
+        int min = ArrayUtils.min(arr);
+        int max = ArrayUtils.max(arr);
+//        int bucketCapacity = (max - min) / bucketNum;
 
-    public static void main(String[] args) {
+        List<List<Integer>> bucketList = new ArrayList<>();
+        for (int i = 0; i < bucketNum; i++) {
+            bucketList.add(new ArrayList<>());
+        }
+        for (int item : arr) {
+//            int bucketIndex = Math.min((item - min) / bucketCapacity, bucketNum - 1);
+            int bucketIndex = (item - min) * bucketNum / (max - min + 1);
+            bucketList.get(bucketIndex).add(item);
+        }
+
+        int indexGap = 0;
+        for (int i = 0; i < bucketNum; i++) {
+            List<Integer> bucket = bucketList.get(i);
+            int[] array = bucket.stream().mapToInt(Integer::intValue).toArray();
+            selectionSort(array);
+            for (int j = 0; j < array.length; j++) {
+                arr[j + indexGap] = array[j];
+            }
+            indexGap += array.length;
+        }
+
+    }
+
+
+    public static void main(String[] args) throws InterruptedException {
         int[] arr = new int[]{5,4,3,2,1};
 //        bubbleSort(arr);
 //        selectionSort(arr);
 //        insertionSort(arr);
-        int[] ints = mergeSort(arr);
-        Cycler.cycleByColumnWithHeader(BoxUtils.boxedIntArr(ints), 5, new CyclePrintByFormatRunner("%-9s"));
+//        int[] ints = mergeSort(arr);
+        bucketSort(arr);
+        Cycler.cycleByColumnWithHeader(BoxUtils.boxedIntArr(arr), 5, new CyclePrintByFormatRunner("%-9s"));
         System.out.println();
+        BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(5);
+        blockingQueue.take();
+
+
     }
 
     /**
@@ -119,6 +158,31 @@ public class Sort_Test {
         if (rightLength - curR >= 0) System.arraycopy(arrRight, curR, resultArr, curL + curR, rightLength - curR);
 
         return resultArr;
+    }
+
+
+    /**
+     * 希尔排序
+     * @param arr
+     */
+    public static void shellSort(int arr[]) {
+        int length = arr.length;
+        int gap = length;
+        while (gap > 1) {
+            gap = gap / 2;
+            for (int i = 0; i < gap; i++) {
+                // i i+gap i+2*gap ...
+                for (int j = i + gap; j < length; j = j + gap) {
+                    for (int k = j - gap; k >= i; k = k - gap) {
+                        if (arr[k+gap] < arr[k]) {
+                            swap(arr, k+gap, k);
+                        } else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 

@@ -49,4 +49,31 @@ public class ArrayUtils {
         return true;
     }
 
+    /**
+     * 返回int数组中最小的值
+     *
+     * @param arr 数组
+     * @return min
+     */
+    public static int min(int[] arr) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            min = Math.min(min, arr[i]);
+        }
+        return min;
+    }
+
+    /**
+     * 返回int数组中最大的值
+     *
+     * @param arr 数组
+     * @return max
+     */
+    public static int max(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            max = Math.max(max, arr[i]);
+        }
+        return max;
+    }
 }
