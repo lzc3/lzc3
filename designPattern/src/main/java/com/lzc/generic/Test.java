@@ -1,6 +1,5 @@
 package com.lzc.generic;
 
-import jdk.internal.org.objectweb.asm.TypeReference;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;

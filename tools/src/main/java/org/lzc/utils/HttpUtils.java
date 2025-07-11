@@ -70,7 +70,7 @@ public class HttpUtils {
      * @param requestHeaders 请求头
      */
     public static String post(String url, Object data, HttpHeaders requestHeaders) {
-        log.info("发送HTTP post请求 url: {},data: {},header:{}", url, JSONObject.toJSONString(data), requestHeaders);
+//        log.info("发送HTTP post请求 url: {},data: {},header:{}", url, JSONObject.toJSONString(data), requestHeaders);
 
 
         HttpEntity<Object> requestEntity = new HttpEntity<>(JSONObject.parseObject(JSONObject.toJSONString(data)), requestHeaders);

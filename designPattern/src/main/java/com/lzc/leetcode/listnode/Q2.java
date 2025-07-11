@@ -3,9 +3,10 @@ package com.lzc.leetcode.listnode;
 import com.lzc.leetcode.test.HandleSolution;
 import com.lzc.leetcode.test.Solution;
 import com.lzc.leetcode.test.args.Args;
+import com.lzc.listnode.ListNode;
 
+import static com.lzc.listnode.ListNodeUtils.buildArrayToListNodeList;
 
-import static com.lzc.leetcode.listnode.ListNodeUtils.buildArrayToListNodeList;
 
 /**
  *

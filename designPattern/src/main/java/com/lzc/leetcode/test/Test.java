@@ -2,12 +2,13 @@ package com.lzc.leetcode.test;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.concurrent.locks.LockSupport;
 
 public class Test {
-    public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, InvocationTargetException {
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, InvocationTargetException, InterruptedException {
 
 //        String classPath = "com.lzc.leetcode.array." + "Q240";
-        String classPath = "com.lzc.leetcode.listnode." + "Q23";
+        String classPath = "com.lzc.leetcode." + "Q1432";
         test(classPath);
     }
 

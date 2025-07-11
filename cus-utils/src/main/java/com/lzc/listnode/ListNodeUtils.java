@@ -1,6 +1,4 @@
-package com.lzc.leetcode.listnode;
-
-import java.util.List;
+package com.lzc.listnode;
 
 public class ListNodeUtils {
 

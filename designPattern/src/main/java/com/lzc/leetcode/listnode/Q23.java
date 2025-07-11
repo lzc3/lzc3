@@ -2,11 +2,9 @@ package com.lzc.leetcode.listnode;
 
 import com.lzc.leetcode.test.HandleSolution;
 import com.lzc.leetcode.test.Solution;
-import com.lzc.leetcode.test.args.Args;
+import com.lzc.listnode.ListNode;
 
-import java.util.Arrays;
-
-import static com.lzc.leetcode.listnode.ListNodeUtils.buildArrayToListNodeList;
+import static com.lzc.listnode.ListNodeUtils.buildArrayToListNodeList;
 
 public class Q23 extends Solution {
 
@@ -55,6 +53,9 @@ public class Q23 extends Solution {
         listNodes[0] = buildArrayToListNodeList(new int[]{1, 4, 5});
         listNodes[1] = buildArrayToListNodeList(new int[]{1, 3, 4});
         listNodes[2] = buildArrayToListNodeList(new int[]{2, 5, 6});
-        return listNodes;
+
+        Object[] objects = new Object[1];
+        objects[0] = listNodes;
+        return objects;
     }
 }

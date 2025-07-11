@@ -1,6 +1,7 @@
 package com.lzc.leetcode.listnode;
 
 import com.lzc.leetcode.test.Solution;
+import com.lzc.listnode.ListNode;
 
 public class Q24 extends Solution {
 

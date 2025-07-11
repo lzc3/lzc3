@@ -27,6 +27,7 @@
         <module>spring</module>
         <module>image</module>
         <module>cus-spring</module>
+        <module>cus-utils</module>
     </modules>
 
     <properties>
