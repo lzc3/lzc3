@@ -1,6 +1,8 @@
 package org.lzc.utils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class BoxUtils {
@@ -13,6 +15,24 @@ public class BoxUtils {
      */
     public static Integer[] boxedIntArr(int[] arr) {
          return Arrays.stream(arr).boxed().toArray(Integer[]::new);
+    }
+
+    /**
+     * 包装String数组成Integer
+     *
+     * @param arr 整数数组
+     * @return Integer数组
+     */
+    public static Integer[] boxedIntArrWithNull(String[] arr) {
+        if (arr == null) return new Integer[0];
+        return Arrays.stream(arr)
+                .map(item -> {
+                    if (item == null) {
+                        return null;
+                    }
+                    return Integer.valueOf(item);
+                })
+                .toArray(Integer[]::new);
     }
 
 

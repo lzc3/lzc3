@@ -22,7 +22,7 @@
         <module>tools</module>
         <module>web</module>
         <module>mq</module>
-        <module>thread</module>
+        <module>juc</module>
         <module>designPattern</module>
         <module>spring</module>
         <module>image</module>

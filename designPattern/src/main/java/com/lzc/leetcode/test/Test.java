@@ -7,8 +7,12 @@ import java.util.concurrent.locks.LockSupport;
 public class Test {
     public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, InvocationTargetException, InterruptedException {
 
-//        String classPath = "com.lzc.leetcode.array." + "Q240";
-        String classPath = "com.lzc.leetcode." + "Q1432";
+//        String classPath = "com.lzc.leetcode.array." + "Q3349";
+//        String classPath = "com.lzc.leetcode.string." + "Q8";
+//        String classPath = "com.lzc.leetcode.dp." + "Q3381";
+//        String classPath = "com.lzc.leetcode.hash." + "Q128";
+//        String classPath = "com.lzc.leetcode.doublepoint." + "Q15";
+        String classPath = "com.lzc.leetcode.window." + "Q3";
         test(classPath);
     }
 

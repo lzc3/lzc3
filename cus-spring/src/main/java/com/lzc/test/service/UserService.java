@@ -28,6 +28,6 @@ public class UserService implements UserInterface, BeanNameAware, InitializingBe
 
     @Override
     public void afterPropertiesSet() {
-        System.out.println("userService 初始化");
+        System.out.println("afterPropertiesSet userService 初始化");
     }
 }

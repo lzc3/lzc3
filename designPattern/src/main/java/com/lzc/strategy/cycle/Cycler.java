@@ -56,14 +56,29 @@ public class Cycler{
      * @param cycleRunner 执行内容
      */
     public static <T> void cycleByColumn(T[] objects, int column, CycleRunner<T> cycleRunner) {
+        cycleByColumn(objects, column, cycleRunner, false);
+    }
+
+    /**
+     * 循环遍历数组中的每个元素，然后执行对应cycleRunner中的方法
+     *
+     * @param objects 循环数组
+     * @param column 列数
+     * @param cycleRunner 执行内容
+     * @param lineBreakFlag 是否换行
+     */
+    public static <T> void cycleByColumn(T[] objects, int column, CycleRunner<T> cycleRunner, boolean lineBreakFlag) {
         for (int i = 0; i < objects.length; i++) {
             cycleRunner.apply(objects[i]);
             if ((i + 1) % column == 0 && i != objects.length - 1) {
                 System.out.println();
             }
         }
-    }
 
+        if (lineBreakFlag) {
+            System.out.println();
+        }
+    }
 
     public static void cycle(int[] intArr) {
         cycle(intArr, CyclePrintRunner.getInstance());

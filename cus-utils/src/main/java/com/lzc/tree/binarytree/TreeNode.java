@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class TreeNode<T> {
-    T value;
-    TreeNode<T> left;
-    TreeNode<T> right;
+    public T value;
+    public TreeNode<T> left;
+    public TreeNode<T> right;
 
     public TreeNode(T t) {
         value = t;

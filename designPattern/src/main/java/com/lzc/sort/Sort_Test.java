@@ -50,11 +50,14 @@ public class Sort_Test {
 //        selectionSort(arr);
 //        insertionSort(arr);
 //        int[] ints = mergeSort(arr);
-        bucketSort(arr);
+//        bucketSort(arr);
+//        Cycler.cycleByColumnWithHeader(BoxUtils.boxedIntArr(arr), 5, new CyclePrintByFormatRunner("%-9s"));
+//        System.out.println();
+//        BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(5);
+//        blockingQueue.take();
+
+        shellSort(arr);
         Cycler.cycleByColumnWithHeader(BoxUtils.boxedIntArr(arr), 5, new CyclePrintByFormatRunner("%-9s"));
-        System.out.println();
-        BlockingQueue<String> blockingQueue = new ArrayBlockingQueue<>(5);
-        blockingQueue.take();
 
 
     }
@@ -163,7 +166,6 @@ public class Sort_Test {
 
     /**
      * 希尔排序
-     * @param arr
      */
     public static void shellSort(int arr[]) {
         int length = arr.length;

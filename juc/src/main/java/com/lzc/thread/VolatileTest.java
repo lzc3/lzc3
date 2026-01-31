@@ -1,5 +1,7 @@
 package com.lzc.thread;
 
+import lombok.SneakyThrows;
+
 /**
  * 1. 保证变量的可见性
  * 在多线程环境中，每个线程都有自己的工作内存，线程在操作变量时，会先将变量从主内存拷贝到自己的工作内存中，然后对工作内存中的变量副本进行操作，最后再将操作结果写回主内存。如果没有 volatile 关键字，一个线程对变量的修改可能不会立即刷新到主内存，其他线程也无法及时看到这个修改。
@@ -9,11 +11,12 @@ package com.lzc.thread;
  * Java 编译器和处理器为了提高性能，可能会对指令进行重排序。指令重排序可能会导致程序的执行顺序与代码的编写顺序不一致。volatile 关键字可以禁止指令重排序，保证代码的执行顺序与编写顺序一致。
  * 在这段代码中，虽然没有明显的指令重排序问题，但在更复杂的场景中，volatile 关键字可以确保对 initFlag 的读写操作按照代码的顺序执行，避免出现意外的结果。
  */
-public class Test {
+public class VolatileTest {
 
     private static volatile boolean initFlag = false;
 
-    public static void main(String[] args) throws InterruptedException {
+    @SneakyThrows
+    public static void main(String[] args){
 
         new Thread(() -> {
             System.out.println("waiting data");
@@ -25,7 +28,7 @@ public class Test {
 
         Thread.sleep(1000);
 
-        new Thread(Test::prepareData).start();
+        new Thread(VolatileTest::prepareData).start();
     }
 
 

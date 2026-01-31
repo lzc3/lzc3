@@ -6,8 +6,6 @@ import lombok.Data;
 @Builder
 @Data
 public class BeanDefinition {
-
-    private Class type;
+    private Class<?> type;
     private String scope;
-
 }

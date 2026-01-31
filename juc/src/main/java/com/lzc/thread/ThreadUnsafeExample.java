@@ -1,25 +1,27 @@
 package com.lzc.thread;
 
+import lombok.SneakyThrows;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadUnsafeExample {
-    private int cnt = 0;
+    private final AtomicInteger cnt = new AtomicInteger();
 
     public void add() {
-        cnt++;
+        cnt.incrementAndGet();
     }
 
     public int get() {
-        return cnt;
+        return cnt.get();
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        final int threadSize = 1000;
+    @SneakyThrows
+    public static void main(String[] args) {
+        final int threadSize = 1002;
         ThreadUnsafeExample example = new ThreadUnsafeExample();
-        Executors.newFixedThreadPool(4);
-        Executors.newSingleThreadExecutor();
         final CountDownLatch countDownLatch = new CountDownLatch(threadSize);
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < threadSize; i++) {
@@ -28,7 +30,9 @@ public class ThreadUnsafeExample {
                 countDownLatch.countDown();
             });
         }
+
         countDownLatch.await();
+
         executorService.shutdown();
         System.out.println(example.get());
     }
